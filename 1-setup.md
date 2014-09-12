@@ -38,13 +38,13 @@ If there is an error, go back and try to fix it. If you only see a blank page, y
 
 Now would be a good time to commit your progress. If you are not already using git, set up a repository now. This is not a git tutorial so I won't go over the details. But using version control should be a habit, even if it is just for a tutorial project like this.
 
-What you have set up now is called a `front controller`. All requests are going to the same file that then decides what to do with it. This is a very common software design pattern.
+What you have set up now is called a [front controller](http://en.wikipedia.org/wiki/Front_Controller_pattern). All requests are going to the same file that then decides what to do with it. This is a very common software design pattern.
 
 ### Introducing composer
 
 Just because you are not using a framework does not mean you will have to reinvent the wheel every time you want to do something. For PHP there is a dependency manager called composer that you can use to pull in 3rd party packages for your application.
 
-If you don't have composer installed already, head over to the website and install it.
+If you don't have composer installed already, head over to the [website](https://getcomposer.org/) and install it. You can find composer packages for your project on [packagist](https://packagist.org/).
 
 Create a new file in your project root folder called `composer.json`. This is the composer configuration file that will be used to configure your project and it's dependencies. It must be valid json or composer will fail.
 

@@ -6,6 +6,8 @@ The first package for the project will be an error handler that will provide you
 
 I like [filp/whoops](https://github.com/filp/whoops) , so I will show how you can install that package for your project. If you prefer another package, feel free to install that one. This is the beauty of programming without a framework, you have total control over your project.
 
+An alternative package would be: [PHP-Error](https://github.com/JosephLenton/PHP-Error)
+
 To install a new package, open up your `composer.json` and add the package to the require part. It should now look like this:
 
 ```
