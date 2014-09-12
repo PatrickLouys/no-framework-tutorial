@@ -13,7 +13,7 @@ To install a new package, open up your `composer.json` and add the package to th
 ```
 "require": {
     "php": ">=5.5.0",
-    "filp/whoops": "~1.0"
+    "filp/whoops": ">=1.1.2"
 },
 ```
 
