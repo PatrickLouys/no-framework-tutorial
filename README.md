@@ -11,4 +11,4 @@ So let's get started right away with the [setup](1-setup.md).
 ### Parts
 
 * [1. Setting up the project](1-setup.md).
-* [2. Http abstraction](2-http.md).
+* [2. HTTP abstraction](2-http.md).
