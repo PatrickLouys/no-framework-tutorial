@@ -1,4 +1,4 @@
-## Creating a PHP application without a framework
+## Create a PHP application without a framework
 
 ### Why this tutorial?
 
