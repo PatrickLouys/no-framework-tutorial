@@ -1,3 +1,5 @@
+[Next step >>](2-http.md)
+
 ### Setting up the front controller
 
 To start, create an empty directory for your project. You also need an entry point where all requests will go to. This means you will have to create an `index.php` file.
@@ -84,3 +86,7 @@ vendor/
 ```
 
 This will exclude the included file and folder from your commits. For which would be a good time now by the way.
+
+Now you have successfully created an empty playground which you can use to set up your project.
+
+[Next step >>](2-http.md)
