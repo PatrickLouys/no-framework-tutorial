@@ -1,4 +1,4 @@
-[Next step >>](2-http.md)
+[next >>](2-http.md)
 
 ### Setting up the front controller
 
@@ -89,4 +89,4 @@ This will exclude the included file and folder from your commits. For which woul
 
 Now you have successfully created an empty playground which you can use to set up your project.
 
-[Next step >>](2-http.md)
+[next >>](2-http.md)
