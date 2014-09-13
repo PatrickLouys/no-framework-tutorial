@@ -4,7 +4,7 @@
 
 PHP already has a few things built in to make working with HTTP easier. For example there are the [superglobals](http://php.net/manual/en/language.variables.superglobals.php) that contain the request information.
 
-These are good if you just want to get a quick and dirty script runnin. But if you want to write clean, maintanable, [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) code, then you will want a class with a nice object oriented interface that you can use in your application.
+These are good if you just want to get a small script up and running without much thought on maintenance. But if you want to write clean, maintanable, [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) code, then you will want a class with a nice object oriented interface that you can use in your application.
 
 Once again, you don't have to reinvent the wheel and just install a package. I decided to write my own [HTTP component](https://github.com/PatrickLouys/http) because I did not like the existing components, but you don't have to do the same.
 
