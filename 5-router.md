@@ -10,4 +10,68 @@ Alternative packages: [symfony/Routing](https://github.com/symfony/Routing), [Au
 
 By now you know how to install composer packages, so I will leave that to you.
 
+Now add this code block to your `Bootstrap.php` file where you added the hello world message in the last part.
+
+```
+$dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) {
+    $r->addRoute('GET', '/hello-world', function () {
+        echo 'Hello World';
+    });
+    $r->addRoute('GET', '/another-route', function () {
+        echo 'This works too';
+    });
+});
+
+$routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getUri());
+switch ($routeInfo[0]) {
+    case \FastRoute\Dispatcher::NOT_FOUND:
+        $response->setContent('404 - Page not found');
+        $response->setStatusCode(404);
+        break;
+    case \FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+        $response->setContent('405 - Method not allowed');
+        $response->setStatusCode(405);
+        break;
+    case \FastRoute\Dispatcher::FOUND:
+        $handler = $routeInfo[1];
+        $vars = $routeInfo[2];
+        call_user_func($handler, $vars);
+        break;
+}
+```
+
+In the first part of the code, you are registering the available routes for you application. In the second part, the dispatcher gets called and the appropriate part of the switch statement will be executed. If a route was found, the handler callable will be executed.
+
+This setup might work for really small applications, but once you start adding a few routes your bootstrap file will quickly get cluttered. So let's move them out into a separate file.
+
+Create a `Routes.php` file in the `src/` folder. It should look like this:
+
+```
+<?php
+
+return [
+    ['GET', '/hello-world', function () {
+        echo 'Hello World';
+    }],
+    ['GET', '/another-route', function () {
+        echo 'This works too';
+    }],
+];
+```
+
+Now let's rewrite the route collection part to use the `Routes.php` file.
+
+```
+$routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
+    $routes = include('Routes.php');
+    foreach ($routes as $route) {
+        $r->addRoute($route[0], $route[1], $route[2]);
+    }
+};
+
+$dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
+```
+
+
+
 to be continued...

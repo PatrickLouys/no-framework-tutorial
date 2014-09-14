@@ -53,7 +53,7 @@ $response->setContent($content);
 If you want to try a 404 error, use the following code:
 
 ```
-$response->setContent('404 - Page not found'');
+$response->setContent('404 - Page not found');
 $response->setStatusCode(404);
 ```
 
