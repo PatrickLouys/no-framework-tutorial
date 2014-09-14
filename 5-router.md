@@ -2,6 +2,8 @@
 
 ### Router
 
+A router dispatches to different handlers depending on rules that you have set up.
+
 With your current setup it does not matter what URL is used to access the application, it will always result in the same response. So let's fix that now.
 
 I will use [FastRoute](https://github.com/nikic/FastRoute) in this tutorial. But as always, you can pick your own favorite package.
