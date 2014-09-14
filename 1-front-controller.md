@@ -34,7 +34,7 @@ echo 'Hello World!';
 
 Now let's see if everything is set up correctly. Open up a console and navigate into your projects `public` folder. In there type `php -S localhost:8000` and press enter. This will start the built-in webserver and you can access your page in a browser with `http://localhost:8000`. You should now see the hello world message.
 
-If there is an error, go back and try to fix it. If you only see a blank page, you will likely have to enable error reporting.
+If there is an error, go back and try to fix it. If you only see a blank page, check the console window where the server is running for errors.
 
 Now would be a good time to commit your progress. If you are not already using git, set up a repository now. This is not a git tutorial so I won't go over the details. But using version control should be a habit, even if it is just for a tutorial project like this.
 

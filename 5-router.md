@@ -1,4 +1,4 @@
-[<< previous](4-http.md)
+[<< previous](4-http.md) | [next >>](6-controllers.md)
 
 ### Router
 
@@ -72,6 +72,6 @@ $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
 $dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
 ```
 
+This is already an improvement, but now all the handler code is in the `Routers.php` file. This is not optimal, so let's fix that in the next part.
 
-
-to be continued...
+[<< previous](4-http.md) | [next >>](6-controllers.md)

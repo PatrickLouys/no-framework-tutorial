@@ -15,4 +15,5 @@ So let's get started right away with the [first part](1-front-controller.md).
 3. [Error Handler](3-error-handler.md)
 4. [HTTP](4-http.md)
 5. [Router](5-router.md)
-6. Dependency Injector
+6. [Controllers](6-controllers.md)
+7. Dependency Injector
