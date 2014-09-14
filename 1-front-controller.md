@@ -2,6 +2,8 @@
 
 ### Front Controller
 
+A [front controller](http://en.wikipedia.org/wiki/Front_Controller_pattern) is a single point of entry for your application.
+
 To start, create an empty directory for your project. You also need an entry point where all requests will go to. This means you will have to create an `index.php` file.
 
 A common way to do this is to just put the `index.php` in the root folder of the projects. This is also how some frameworks do it. Let me explain why you should not do this.
@@ -37,7 +39,5 @@ Now let's see if everything is set up correctly. Open up a console and navigate 
 If there is an error, go back and try to fix it. If you only see a blank page, check the console window where the server is running for errors.
 
 Now would be a good time to commit your progress. If you are not already using git, set up a repository now. This is not a git tutorial so I won't go over the details. But using version control should be a habit, even if it is just for a tutorial project like this.
-
-What you have set up now is called a [front controller](http://en.wikipedia.org/wiki/Front_Controller_pattern). All requests are going to the same file that then decides what to do with it. This is a very common software design pattern.
 
 [next >>](2-composer.md)

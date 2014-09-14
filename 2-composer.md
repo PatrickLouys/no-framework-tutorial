@@ -2,9 +2,11 @@
 
 ### Composer
 
-Just because you are not using a framework does not mean you will have to reinvent the wheel every time you want to do something. For PHP there is a dependency manager called composer that you can use to pull in 3rd party packages for your application.
+[Composer](https://getcomposer.org/) is a dependency manager for PHP.
 
-If you don't have composer installed already, head over to the [website](https://getcomposer.org/) and install it. You can find composer packages for your project on [packagist](https://packagist.org/).
+Just because you are not using a framework does not mean you will have to reinvent the wheel every time you want to do something. With composer you can install 3rd party libraries for your application.
+
+If you don't have composer installed already, head over to the website and install it. You can find composer packages for your project on [packagist](https://packagist.org/).
 
 Create a new file in your project root folder called `composer.json`. This is the composer configuration file that will be used to configure your project and it's dependencies. It must be valid json or composer will fail.
 
