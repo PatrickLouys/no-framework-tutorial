@@ -27,9 +27,9 @@ Now before you start adding the error handler code to the
 
 **Important:** Never show any errors in your production environment. A stack trace or even just a simple error message can help someone to gain access to your system. Always show a user friendly error page instead and send an email to yourself, write to a log or something similar. So only you can see the errors in the production environment.
 
-For development that does not make sense though and you want a nice error page. So the solution is to have an environment switch in your code. For now you can just set it to `development`.
+For development that does not make sense though -- you want a nice error page. The solution is to have an environment switch in your code. For now you can just set it to `development`.
 
-Then after the error handler registration, throw an Exception to test if everything is working correctly. Your `Bootstrap.php` should now look similar to this:
+Then after the error handler registration, throw an `Exception` to test if everything is working correctly. Your `Bootstrap.php` should now look similar to this:
 
 ```
 <?php
@@ -59,7 +59,7 @@ throw new \Exception;
 
 ```
 
-You should now see a nice error page with the line highlighted where you throw the exception. If not, go back and debug until you get it working. Now would also be a good time for another commit.
+You should now see a error page with the line highlighted where you throw the exception. If not, go back and debug until you get it working. Now would also be a good time for another commit.
 
 [<< previous](2-composer.md) | [next >>](4-http.md)
 
