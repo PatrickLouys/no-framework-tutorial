@@ -8,7 +8,7 @@ You should at least heard of [SOLID](http://en.wikipedia.org/wiki/SOLID_%28objec
 
 I saw a lot of people coming into the Stack Overflow PHP chatroom and asking if framework X is any good. Most of the time the answer was that they should just use PHP and not a framework to build their application. But many are overwhelmed by this and don't know where to start.
 
-So my goal with this is to provide an easy resource that people can be pointed to. In most cases a framework does not make sense and writing an application from scratch with the help of some 3rd party packages is much, much easier than some people think.
+So my goal with this is to provide an easy resource that people can be pointed to. In most cases a framework does not make sense and writing an application from scratch with the help of some third party packages is much, much easier than some people think.
 
 So let's get started right away with the [first part](1-front-controller.md).
 
