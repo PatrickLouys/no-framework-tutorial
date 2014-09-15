@@ -10,9 +10,9 @@ I will use [FastRoute](https://github.com/nikic/FastRoute) in this tutorial. But
 
 Alternative packages: [symfony/Routing](https://github.com/symfony/Routing), [Aura.Router](https://github.com/auraphp/Aura.Router), [fuelphp/routing](https://github.com/fuelphp/routing), [Klein](https://github.com/chriso/klein.php)
 
-By now you know how to install composer packages, so I will leave that to you.
+By now you know how to install Composer packages, so I will leave that to you.
 
-Now add this code block to your `Bootstrap.php` file where you added the hello world message in the last part.
+Now add this code block to your `Bootstrap.php` file where you added the 'hello world' message in the last part.
 
 ```
 $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) {
