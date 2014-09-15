@@ -1,6 +1,10 @@
 ## Create a PHP application without a framework
 
-### Why this tutorial?
+### Introduction
+
+If you are really new to the language, this is not for you. This tutorial is aimed at people who have grasped the basics of PHP and know a little bit about object oriented programming.
+
+You should at least heard of [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29). If you are not familiar with it, now would be a good time to familiarize yourself with the principles before you start with the tutorial.
 
 I saw a lot of people coming into the stackoverflow PHP chatroom that asked if X framework is any good. Most of the time the answer was that they should just use PHP and not a framework to build their application. But many are overwhelmed by this and don't know where to start.
 
