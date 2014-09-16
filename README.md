@@ -20,4 +20,5 @@ So let's get started right away with the [first part](1-front-controller.md).
 4. [HTTP](4-http.md)
 5. [Router](5-router.md)
 6. [Controllers](6-controllers.md)
-7. [Dependency Injection](7-dependency-injection.md)
+7. [Inversion of Control](7-inversion-of-control.md)
+8. [Dependency Injector](8-dependency-injector.md)
