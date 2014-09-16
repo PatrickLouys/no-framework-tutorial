@@ -4,7 +4,7 @@
 
 PHP already has a few things built in to make working with HTTP easier. For example there are the [superglobals](http://php.net/manual/en/language.variables.superglobals.php) that contain the request information.
 
-These are good if you just want to get a small script up and running without much thought on maintenance. But if you want to write clean, maintanable, [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) code, then you will want a class with a nice object oriented interface that you can use in your application.
+These are good if you just want to get a small script up and running without much thought on maintenance. However, if you want to write clean, maintainable, [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) code, then you will want a class with a nice object-oriented interface that you can use in your application.
 
 Once again, you don't have to reinvent the wheel and just install a package. I decided to write my own [HTTP component](https://github.com/PatrickLouys/http) because I did not like the existing components, but you don't have to do the same.
 
@@ -43,7 +43,7 @@ echo $response->getContent();
 
 This will send the response data to the browser. If you don't do this, nothing happens as the `Response` object only stores data. This is handled differently by most other HTTP components where the classes send data back to the browser as a side-effect, so keep that in mind if you use another component.
 
-Right now it is just sending an empty response back to the browser with the status code `200`, so to change that add the following code between the code snippets from above:
+Right now it is just sending an empty response back to the browser with the status code `200`; to change that, add the following code between the code snippets from above:
 
 ```
 $content = '<h1>Hello World</h1>';
@@ -57,7 +57,7 @@ $response->setContent('404 - Page not found');
 $response->setStatusCode(404);
 ```
 
-Remember that the object is only storing data, so you if you set multiple status codes before you send the response, the last one will be applied.
+Remember that the object is only storing data, so you if you set multiple status codes before you send the response, only the last one will be applied.
 
 I will show you in later parts how to use the different features of the components. In the meantime, feel free to read the [documentation](https://github.com/PatrickLouys/http) or the source code if you want to find out how something works.
 

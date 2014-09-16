@@ -4,11 +4,11 @@
 
 [Composer](https://getcomposer.org/) is a dependency manager for PHP.
 
-Just because you are not using a framework does not mean you will have to reinvent the wheel every time you want to do something. With composer you can install 3rd party libraries for your application.
+Just because you are not using a framework does not mean you will have to reinvent the wheel every time you want to do something. With Composer, you can install third-party libraries for your application.
 
-If you don't have composer installed already, head over to the website and install it. You can find composer packages for your project on [packagist](https://packagist.org/).
+If you don't have Composer installed already, head over to the website and install it. You can find Composer packages for your project on [Packagist](https://packagist.org/).
 
-Create a new file in your project root folder called `composer.json`. This is the composer configuration file that will be used to configure your project and it's dependencies. It must be valid json or composer will fail.
+Create a new file in your project root folder called `composer.json`. This is the Composer configuration file that will be used to configure your project and its dependencies. It must be valid JSON or Composer will fail.
 
 Add the following content to the file:
 
@@ -40,14 +40,14 @@ In the autoload part you can see that I am using the `Example` namespace for the
 
 Open a new console window and navigate into your project root folder. There run `composer update`.
 
-Composer creates a `composer.lock` file that locks in your dependencies and a vendor directory. To remove those from your git repository, add a new file in your project root folder called `.gitignore` with the following content:
+Composer creates a `composer.lock` file that locks in your dependencies and a vendor directory. To remove those from your Git repository, add a new file in your project root folder called `.gitignore` with the following content:
 
 ```
 composer.lock
 vendor/
 ```
 
-This will exclude the included file and folder from your commits. For which would be a good time now by the way.
+This will exclude the included file and folder from your commits. For which now would be a good time, by the way.
 
 Now you have successfully created an empty playground which you can use to set up your project.
 
