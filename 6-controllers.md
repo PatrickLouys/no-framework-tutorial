@@ -1,4 +1,4 @@
-[<< previous](5-router.md)
+[<< previous](5-router.md) | [next >>](7-dependency-injection.md)
 
 ### Controllers
 
@@ -52,4 +52,4 @@ So instead of just calling a handler method you are now instantiating the contro
 
 Now if you visit `http://localhost:8000/hello-world` everything should work. If not, go back and debug. And of course don't forget to commit your changes.
 
-to be continued...
+[<< previous](5-router.md) | [next >>](7-dependency-injection.md)
