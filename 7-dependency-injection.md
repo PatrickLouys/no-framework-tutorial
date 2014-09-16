@@ -1,4 +1,4 @@
-[<< previous](5-router.md) | [next >>](7-dependency-injection.md)
+[<< previous](6-controllers.md)
 
 ### Dependency Injection
 
