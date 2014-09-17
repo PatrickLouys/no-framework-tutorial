@@ -24,7 +24,7 @@ $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r
     });
 });
 
-$routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getUri());
+$routeInfo = $dispatcher->dispatch($request->getMethod(), $request->getPath());
 switch ($routeInfo[0]) {
     case \FastRoute\Dispatcher::NOT_FOUND:
         $response->setContent('404 - Page not found');
