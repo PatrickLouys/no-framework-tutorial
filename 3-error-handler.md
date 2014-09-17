@@ -12,7 +12,7 @@ An alternative package would be: [PHP-Error](https://github.com/JosephLenton/PHP
 
 To install a new package, open up your `composer.json` and add the package to the require part. It should now look like this:
 
-```
+```php
 "require": {
     "php": ">=5.5.0",
     "filp/whoops": ">=1.1.2"
@@ -29,7 +29,7 @@ For development that does not make sense though -- you want a nice error page. T
 
 Then after the error handler registration, throw an `Exception` to test if everything is working correctly. Your `Bootstrap.php` should now look similar to this:
 
-```
+```php
 <?php
 
 namespace Example;

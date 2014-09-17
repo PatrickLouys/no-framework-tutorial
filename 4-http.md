@@ -14,7 +14,7 @@ In this tutorial I will use my own HTTP component, but of course you can use whi
 
 Again, edit the `composer.json` to add the new component and then run `composer update`:
 
-```
+```json
 "require": {
     "php": ">=5.5.0",
     "filp/whoops": ">=1.1.2",
@@ -24,7 +24,7 @@ Again, edit the `composer.json` to add the new component and then run `composer 
 
 Now you can add the following below your error handler code in your `Bootstrap.php` (and don't forget to remove the exception):
 
-```
+```php
 $request = new \Http\HttpRequest($_GET, $_POST, $_COOKIE, $_FILES, $_SERVER);
 $response = new \Http\HttpResponse;
 ```
@@ -33,7 +33,7 @@ This sets up the `Request` and `Response` objects that you can use in your other
 
 To actually send something back, you will also need to add the following snippet at the end of your `Bootstrap.php` file:
 
-```
+```php
 foreach ($response->getHeaders() as $header) {
     header($header);
 }
@@ -45,14 +45,14 @@ This will send the response data to the browser. If you don't do this, nothing h
 
 Right now it is just sending an empty response back to the browser with the status code `200`; to change that, add the following code between the code snippets from above:
 
-```
+```php
 $content = '<h1>Hello World</h1>';
 $response->setContent($content);
 ```
 
 If you want to try a 404 error, use the following code:
 
-```
+```php
 $response->setContent('404 - Page not found');
 $response->setStatusCode(404);
 ```

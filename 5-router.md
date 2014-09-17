@@ -14,7 +14,7 @@ By now you know how to install Composer packages, so I will leave that to you.
 
 Now add this code block to your `Bootstrap.php` file where you added the 'hello world' message in the last part.
 
-```
+```php
 $dispatcher = \FastRoute\simpleDispatcher(function (\FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/hello-world', function () {
         echo 'Hello World';
@@ -48,7 +48,7 @@ This setup might work for really small applications, but once you start adding a
 
 Create a `Routes.php` file in the `src/` folder. It should look like this:
 
-```
+```php
 <?php
 
 return [
@@ -63,7 +63,7 @@ return [
 
 Now let's rewrite the route collection part to use the `Routes.php` file.
 
-```
+```php
 $routeDefinitionCallback = function (\FastRoute\RouteCollector $r) {
     $routes = include('Routes.php');
     foreach ($routes as $route) {

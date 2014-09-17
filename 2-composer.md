@@ -12,7 +12,7 @@ Create a new file in your project root folder called `composer.json`. This is th
 
 Add the following content to the file:
 
-```
+```json
 {
     "name": "Project name",
     "description": "Your project description",
@@ -42,7 +42,7 @@ Open a new console window and navigate into your project root folder. There run 
 
 Composer creates a `composer.lock` file that locks in your dependencies and a vendor directory. To remove those from your Git repository, add a new file in your project root folder called `.gitignore` with the following content:
 
-```
+```php
 composer.lock
 vendor/
 ```

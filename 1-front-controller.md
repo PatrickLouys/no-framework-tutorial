@@ -16,7 +16,7 @@ So instead of doing that, create a folder in your project folder called `public`
 
 Inside the `public` folder you can now create your `index.php`. Remember that you don't want to expose anything here, so put just the following code in there:
 
-```
+```php
 <?php 
 
 require '../src/Bootstrap.php';
@@ -28,7 +28,7 @@ The rest of the public folder is reserved for your public asset files (like Java
 
 Now navigate inside your `src` folder and create a new `Bootstrap.php` file with the following content:
 
-```
+```php
 <?php 
 
 echo 'Hello World!';
