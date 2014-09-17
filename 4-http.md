@@ -18,7 +18,7 @@ Again, edit the `composer.json` to add the new component and then run `composer 
 "require": {
     "php": ">=5.5.0",
     "filp/whoops": ">=1.1.2",
-    "patricklouys/http": ">=1.0.3"
+    "patricklouys/http": ">=1.1.0"
 },
 ```
 
