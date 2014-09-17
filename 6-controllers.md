@@ -6,7 +6,7 @@ When I talk about a controller in this tutorial then I am just referring to a cl
 
 Create a new folder inside the `src/` folder with the name `HelloWorld`. This will be where all your hello world related code will end up in. In there, create `HelloWorldController.php`.
 
-```
+```php
 <?php
 
 namespace Example\HelloWorld;
@@ -24,7 +24,7 @@ The autoloader will only work if the namespace of a class matches the file path 
 
 Now let's change the hello world route so that it calls your new controller method instead of the closure. Change your `Routes.php` to this:
 
-```
+```php
 return [
     ['GET', '/hello-world', [
         'Example\HelloWorld\HelloWorldController', 
@@ -37,7 +37,7 @@ Instead of just a callable you are now passing an array. The first value is the 
 
 To make this work, you will also have to do a small refactor to the routing part of the `Bootstrap.php`:
 
-```
+```php
 case \FastRoute\Dispatcher::FOUND:
     $className = $routeInfo[1][0];
     $method = $routeInfo[1][1];

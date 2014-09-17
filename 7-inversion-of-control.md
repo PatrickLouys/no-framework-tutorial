@@ -10,7 +10,7 @@ If it sounds a little complicated right now, don't worry. Just follow the tutori
 
 Change your `HelloWorldController` to the following:
 
-```
+```php
 <?php
 
 namespace Example\HelloWorld;
@@ -39,7 +39,7 @@ In the contructor you are now explicitly asking for a `Http\Response`. In this c
 
 Now the code will result in an error because you are not actually injecting anything. So let's fix that in your `Bootstrap.php` where you dispatch when a route was found:
 
-```
+```php
 $class = new $className($response);
 $class->$method($vars);
 ```
