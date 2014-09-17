@@ -10,7 +10,7 @@ My favorite injector is [Auryn](https://github.com/rdlowrey/Auryn), so install `
 
 Create a new file called `Dependencies.php` in your `src/` folder. In there add the following content:
 
-```
+```php
 <?php
 
 $injector = new \Auryn\Provider;
@@ -43,5 +43,30 @@ Make sure you understand what `alias`, `share` and `define` are doing before you
 You are sharing the HTTP objects because there would not be much point in adding content to one object and then returning another one. So by sharing it you always get the same instance.
 
 The alias allows you to type hint the interface instead of the class name. This makes it easy to switch the implementation without having to go back and edit all your classes that use the old implementation.
+
+Of course your `Bootstrap.php` will also need to be changed. Before you were setting up `$request` and `$response` with `new` calls. Switch that to the injector now so that we are using the same instance of those objects everywhere.
+
+```php
+$injector = include('Dependencies.php');
+
+$request = $injector->make('Http\HttpRequest');
+$response = $injector->make('Http\HttpResponse');
+```
+
+The other part that has to be changed is the dispatching of the route. Before you had the following code:
+
+```php
+$class = new $className($response);
+$class->$method($vars);
+```
+
+Change that to the following:
+
+```php
+$class = $injector->make($className);
+$class->$method($vars);
+```
+
+Now all your controller constructor dependencies will be automatically resolved with Auryn.
 
 to be continued...
