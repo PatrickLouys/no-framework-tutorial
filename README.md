@@ -19,6 +19,6 @@ So let's get started right away with the [first part](1-front-controller.md).
 3. [Error Handler](3-error-handler.md)
 4. [HTTP](4-http.md)
 5. [Router](5-router.md)
-6. [Controllers](6-controllers.md)
+6. [Dispatching to a Class](6-dispatching-to-a-class.md)
 7. [Inversion of Control](7-inversion-of-control.md)
 8. [Dependency Injector](8-dependency-injector.md)

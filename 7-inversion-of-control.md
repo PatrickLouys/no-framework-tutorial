@@ -1,4 +1,4 @@
-[<< previous](6-controllers.md) | [next >>](8-dependency-injector.md)
+[<< previous](6-dispatching-to-a-class.md) | [next >>](8-dependency-injector.md)
 
 ### Inversion of Control
 
@@ -48,4 +48,4 @@ The `Http\HttpResponse` object implements the `Http\Response` interface, so it f
 
 Now everything should work again. But if you follow this example, all your controllers will have the same objects injected. This is of course not good, so let's fix that in the next part.
 
-[<< previous](6-controllers.md) | [next >>](8-dependency-injector.md)
+[<< previous](6-dispatching-to-a-class.md) | [next >>](8-dependency-injector.md)
