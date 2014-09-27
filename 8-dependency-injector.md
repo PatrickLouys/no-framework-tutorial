@@ -67,7 +67,7 @@ $class->$method($vars);
 
 Now all your controller constructor dependencies will be automatically resolved with Auryn.
 
-Go back to your `HelloWorldController.php` and change it to the following:
+Go back to your `HelloWorldPresenter.php` and change it to the following:
 
 ```php
 <?php
@@ -77,7 +77,7 @@ namespace Example\HelloWorld;
 use Http\Request;
 use Http\Response;
 
-class HelloWorldController
+class HelloWorldPresenter
 {
     private $request;
     private $response;
