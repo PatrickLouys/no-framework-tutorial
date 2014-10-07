@@ -1,4 +1,4 @@
-[<< previous](7-inversion-of-control.md) | [next >>](9-templating.md
+[<< previous](7-inversion-of-control.md) | [next >>](9-templating.md)
 
 ### Dependency Injector
 
@@ -101,4 +101,4 @@ As you can see now the class has two dependencies. Try to access the page with a
 
 Congratulations, you have now successfully laid the groundwork for your application. 
 
-[<< previous](7-inversion-of-control.md) | [next >>](9-templating.md
+[<< previous](7-inversion-of-control.md) | [next >>](9-templating.md)
