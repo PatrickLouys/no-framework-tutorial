@@ -2,7 +2,7 @@
 
 ### Introduction
 
-If you are really new to the language, this is not for you. This tutorial is aimed at people who have grasped the basics of PHP and know a little bit about object-oriented programming.
+If you are new to the language, this tutorial is not for you. This tutorial is aimed at people who have grasped the basics of PHP and know a little bit about object-oriented programming.
 
 You should at least heard of [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29). If you are not familiar with it, now would be a good time to familiarize yourself with the principles before you start with the tutorial.
 
