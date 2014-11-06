@@ -19,7 +19,7 @@ Inside the `public` folder you can now create your `index.php`. Remember that yo
 ```php
 <?php 
 
-require '../src/Bootstrap.php';
+require __DIR__ . '/../src/Bootstrap.php';
 ```
 
 The `Bootstrap.php` will be the file that wires your application together. We will get to it shortly.
