@@ -12,7 +12,7 @@ The `index.php` is the starting point, so it has to be inside the web server dir
 
 But sometimes things don't go according to plan. And if something goes wrong and your files are set up as above, your whole application source code could be exposed to visitors. I won't have to explain why this is not a good thing.
 
-So instead of doing that, create a folder in your project folder called `public`. This is a good time to create an `src` folder for your application, also in the project root folder.
+So instead of doing that, create a folder in your project folder called `public`. This is a good time to create a `src` folder for your application, also in the project root folder.
 
 Inside the `public` folder you can now create your `index.php`. Remember that you don't want to expose anything here, so put just the following code in there:
 
