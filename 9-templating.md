@@ -120,7 +120,7 @@ To make this change we need to pass an options array to the `Mustache_Engine` co
 ```php
 $injector->define('Mustache_Engine', [
     ':options' => [
-        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__).'/templates'),
+        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates'),
     ],
 ]);
 ```
