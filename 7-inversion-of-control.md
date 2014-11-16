@@ -2,13 +2,13 @@
 
 ### Inversion of Control
 
-In the last part you have set up a controller and generated output with `echo`. But let's not forget that you have a nice object oriented HTTP abstraction available. But right now it's not accessible inside your class.
+In the last part you have set up a presenter class and generated output with `echo`. But let's not forget that you have a nice object oriented HTTP abstraction available. But right now it's not accessible inside your class.
 
 The sane option is to use [inversion of control](http://en.wikipedia.org/wiki/Inversion_of_control). This means that instead of giving the class the responsiblity of creating the object it needs, you just ask for them. This is done with [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection).
 
 If it sounds a little complicated right now, don't worry. Just follow the tutorial and once you see how it is implemented things will make more sense.
 
-Change your `HelloWorldController` to the following:
+Change your `HelloWorldPresenter` to the following:
 
 ```php
 <?php
@@ -17,7 +17,7 @@ namespace Example\HelloWorld;
 
 use Http\Response;
 
-class HelloWorldController
+class HelloWorldPresenter
 {
     private $response;
 
@@ -46,6 +46,6 @@ $class->$method($vars);
 
 The `Http\HttpResponse` object implements the `Http\Response` interface, so it fulfills the contract and can be used.
 
-Now everything should work again. But if you follow this example, all your controllers will have the same objects injected. This is of course not good, so let's fix that in the next part.
+Now everything should work again. But if you follow this example, all your objects that are instantiated this way will have the same objects injected. This is of course not good, so let's fix that in the next part.
 
 [<< previous](6-dispatching-to-a-class.md) | [next >>](8-dependency-injector.md)
