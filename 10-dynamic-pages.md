@@ -222,4 +222,5 @@ It is important that you don't forget this step, otherwise it will try to catch 
 Try a few different URLs to check that everything is working as it should. If something is wrong, go back and debug it until it works.
 
 And as always, don't forget to commit your changes.
+
 [<< previous](9-templating.md)
