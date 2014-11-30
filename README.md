@@ -23,3 +23,4 @@ So let's get started right away with the [first part](1-front-controller.md).
 7. [Inversion of Control](7-inversion-of-control.md)
 8. [Dependency Injector](8-dependency-injector.md)
 9. [Templating](9-templating.md)
+10. [Dynamic Pages](10-dynamic-pages.md)
