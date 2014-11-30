@@ -1,4 +1,4 @@
-[<< previous](8-dependency-injector.md)
+[<< previous](8-dependency-injector.md) | [next >>](10-dynamic-pages.md)
 
 ### Templating
 
@@ -108,8 +108,8 @@ We also have to rewrite the `show` method. Please note that while we are just pa
         $data = [
             'name' => $this->request->getParameter('name', 'stranger'),
         ];
-        $content = $this->templateEngine->render('Hello {{name}}', $data);
-        $this->response->setContent($content);
+        $html = $this->templateEngine->render('Hello {{name}}', $data);
+        $this->response->setContent($html);
     }
 ```
 
@@ -136,4 +136,4 @@ Now you can go back to your `Homepage` controller and change the render line to 
 
 Navigate to the hello page in your browser to make sure everything works. And as always, don't forget to commit your changes.
 
-[<< previous](8-dependency-injector.md)
+[<< previous](8-dependency-injector.md) | [next >>](10-dynamic-pages.md)
