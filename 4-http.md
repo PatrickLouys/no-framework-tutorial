@@ -8,7 +8,7 @@ These are good if you just want to get a small script up and running without muc
 
 Once again, you don't have to reinvent the wheel and just install a package. I decided to write my own [HTTP component](https://github.com/PatrickLouys/http) because I did not like the existing components, but you don't have to do the same.
 
-Some alternatives: [Symfony HttpFoundation](https://github.com/symfony/HttpFoundation), [Nette HTTP Component](https://github.com/nette/http), [Aura Http](https://github.com/auraphp/Aura.Http), [sabre/http](https://github.com/fruux/sabre-http)
+Some alternatives: [Symfony HttpFoundation](https://github.com/symfony/HttpFoundation), [Nette HTTP Component](https://github.com/nette/http), [Aura Web](https://github.com/auraphp/Aura.Web), [sabre/http](https://github.com/fruux/sabre-http)
 
 In this tutorial I will use my own HTTP component, but of course you can use whichever package you like most. Just change the code accordingly.
 
