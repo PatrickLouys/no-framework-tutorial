@@ -2,22 +2,22 @@
 
 ### Inversion of Control
 
-In the last part you have set up a presenter class and generated output with `echo`. But let's not forget that you have a nice object oriented HTTP abstraction available. But right now it's not accessible inside your class.
+In the last part you have set up a controller class and generated output with `echo`. But let's not forget that you have a nice object oriented HTTP abstraction available. But right now it's not accessible inside your class.
 
 The sane option is to use [inversion of control](http://en.wikipedia.org/wiki/Inversion_of_control). This means that instead of giving the class the responsiblity of creating the object it needs, you just ask for them. This is done with [dependency injection](http://en.wikipedia.org/wiki/Dependency_injection).
 
 If it sounds a little complicated right now, don't worry. Just follow the tutorial and once you see how it is implemented things will make more sense.
 
-Change your `HelloWorldPresenter` to the following:
+Change your `Homepage` controller to the following:
 
 ```php
 <?php
 
-namespace Example\HelloWorld;
+namespace Example\Controller;
 
 use Http\Response;
 
-class HelloWorldPresenter
+class Homepage
 {
     private $response;
 
@@ -26,14 +26,14 @@ class HelloWorldPresenter
         $this->response = $response;
     }
 
-    public function hello()
+    public function show()
     {
         $this->response->setContent('Hello World');
     }
 }
 ```
 
-Please note that you are [importing](http://php.net/manual/en/language.namespaces.importing.php) `Http\Response` at the top of the file. This means that whenever you use `Response` inside this file, it will resolve to the fully qualified name.
+Note that you are [importing](http://php.net/manual/en/language.namespaces.importing.php) `Http\Response` at the top of the file. This means that whenever you use `Response` inside this file, it will resolve to the fully qualified name.
 
 In the contructor you are now explicitly asking for a `Http\Response`. In this case, `Http\Response` is an interface. So any class that implements the interface can be injected. See [type hinting](http://php.net/manual/en/language.oop5.typehinting.php) and [interfaces](http://php.net/manual/en/language.oop5.interfaces.php) for reference.
 

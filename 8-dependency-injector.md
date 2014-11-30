@@ -60,17 +60,17 @@ $class->$method($vars);
 
 Now all your controller constructor dependencies will be automatically resolved with Auryn.
 
-Go back to your `HelloWorldPresenter.php` and change it to the following:
+Go back to your `Homepage` controller and change it to the following:
 
 ```php
 <?php
 
-namespace Example\HelloWorld;
+namespace Example\Controllers;
 
 use Http\Request;
 use Http\Response;
 
-class HelloWorldPresenter
+class Homepage
 {
     private $request;
     private $response;
@@ -81,7 +81,7 @@ class HelloWorldPresenter
         $this->response = $response;
     }
 
-    public function hello()
+    public function show()
     {
         $content = '<h1>Hello World</h1>';
         $content .= 'Hello ' . $this->request->getParameter('name', 'stranger');
@@ -90,7 +90,7 @@ class HelloWorldPresenter
 }
 ```
 
-As you can see now the class has two dependencies. Try to access the page with a GET parameter like this `http://localhost:8000/hello-world?name=Arthur%20Dent`.
+As you can see now the class has two dependencies. Try to access the page with a GET parameter like this `http://localhost:8000/?name=Arthur%20Dent`.
 
 Congratulations, you have now successfully laid the groundwork for your application. 
 

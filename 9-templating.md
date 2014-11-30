@@ -68,18 +68,18 @@ Of course we also have to add a definition in our `Dependencies.php` file becaus
 
 `$injector->alias('Example\Template\Engine', 'Example\Template\MustacheEngineAdapter');`
 
-Now in your `HelloWorldPresenter`, add the new dependency like this:
+Now in your `Homepage` controller, add the new dependency like this:
 
 ```php
 <?php
 
-namespace Example\HelloWorld;
+namespace Example\Controllers;
 
 use Http\Request;
 use Http\Response;
 use Example\Template\Engine as TemplateEngine;
 
-class HelloWorldPresenter
+class Homepage
 {
     private $request;
     private $response;
@@ -100,10 +100,10 @@ class HelloWorldPresenter
 
 As you can see I imported the engine with an alias. Without the full namespace it would be relatively unclear what a class does if it is just referenced by `Engine`. Also, another part of the application might also have a class with the name `Engine`. So to avoid that I give it a short and descriptive alias.
 
-We also have to rewrite the `hello` method. Please note that while we are just passing in a simple array, Mustache also gives you the option to pass in a view context object. We will go over this later, for now let's keep it as simple as possible.
+We also have to rewrite the `show` method. Please note that while we are just passing in a simple array, Mustache also gives you the option to pass in a view context object. We will go over this later, for now let's keep it as simple as possible.
 
 ```php
-    public function hello()
+    public function show()
     {
         $data = [
             'name' => $this->request->getParameter('name', 'stranger'),
@@ -125,14 +125,14 @@ $injector->define('Mustache_Engine', [
 ]);
 ```
 
-In your project root folder, create a `templates` folder. In there, create a folder `HelloWorld` and in there a file `Hello.mustache`. The content of the file should look like this:
+In your project root folder, create a `templates` folder. In there, create a file `Homepage.mustache`. The content of the file should look like this:
 
 ```
 <h1>Hello World</h1>
 Hello {{ name }}
 ```
 
-Now you can go back to your `HelloWorldPresenter` and change the render line to `$content = $this->templateEngine->render('HelloWorld/Hello', $data);`
+Now you can go back to your `Homepage` controller and change the render line to `$content = $this->templateEngine->render('Homepage', $data);`
 
 Navigate to the hello page in your browser to make sure everything works. And as always, don't forget to commit your changes.
 
