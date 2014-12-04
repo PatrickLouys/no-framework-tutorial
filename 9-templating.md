@@ -24,7 +24,7 @@ First let's define the interface that we want. Remember the [interface segregati
 
 So what does our template engine actually need to do? For now we really just need a simple `render` method. Create a new folder in your `src/` folder with the name `Template` where you can put all the template related things.
 
-In there create a new interface `Renderable.php` that looks like this:
+In there create a new interface `Engine.php` that looks like this:
 
 ```php
 <?php
