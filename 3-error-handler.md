@@ -43,15 +43,15 @@ $environment = 'development';
 /**
 * Register the error handler
 */
-$woops = new \Whoops\Run;
+$whoops = new \Whoops\Run;
 if ($environment !== 'production') {
-    $woops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 } else {
-    $woops->pushHandler(function($e){
+    $whoops->pushHandler(function($e){
         echo 'Friendly error page and send an email to the developer';
     });
 }
-$woops->register();
+$whoops->register();
 
 throw new \Exception;
 
@@ -60,4 +60,3 @@ throw new \Exception;
 You should now see a error page with the line highlighted where you throw the exception. If not, go back and debug until you get it working. Now would also be a good time for another commit.
 
 [<< previous](2-composer.md) | [next >>](4-http.md)
-
