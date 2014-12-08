@@ -43,15 +43,15 @@ $environment = 'development';
 /**
 * Register the error handler
 */
-$woops = new \Whoops\Run;
+$whoops = new \Whoops\Run;
 if ($environment !== 'production') {
-    $woops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 } else {
-    $woops->pushHandler(function($e){
+    $whoops->pushHandler(function($e){
         echo 'Friendly error page and send an email to the developer';
     });
 }
-$woops->register();
+$whoops->register();
 
 throw new \Exception;
 
