@@ -107,12 +107,12 @@ public function show($params)
 {
     $slug = $params['slug'];
     $data['content'] = $this->pageReader->getContentBySlug($slug);
-    $html = $this->templateEngine->render('Page', $data);
+    $html = $this->renderer->render('Page', $data);
     $this->response->setContent($html);
 }
 ```
 
-To make this work, we will need to inject a `Response`, `TemplateEngine` and a `PageReader`. I will leave this to you as an exercise. Remember to `use` all the proper namespaces. Use the `Homepage` controller as a reference.
+To make this work, we will need to inject a `Response`, `Renderer` and a `PageReader`. I will leave this to you as an exercise. Remember to `use` all the proper namespaces. Use the `Homepage` controller as a reference.
 
 Did you get everything to work?
 
@@ -124,22 +124,22 @@ If not, this is how the beginning of your controller should look now:
 namespace Example\Controllers;
 
 use Http\Response;
-use Example\Template\Engine as TemplateEngine;
+use Example\Template\Renderer;
 use Example\Page\PageReader;
 
 class Page
 {
     private $response;
-    private $templateEngine;
+    private $renderer;
     private $pageReader;
 
     public function __construct(
         Response $response,
-        TemplateEngine $templateEngine,
+        Renderer $renderer,
         PageReader $pageReader
     ) {
         $this->response = $response;
-        $this->templateEngine = $templateEngine;
+        $this->renderer = $renderer;
         $this->pageReader = $pageReader;
     }
 ...
@@ -207,7 +207,7 @@ public function show($params)
         return $this->response->setContent('404 - Page not found');
     }
     
-    $html = $this->templateEngine->render('Page', $data);
+    $html = $this->renderer->render('Page', $data);
     $this->response->setContent($html);
 }
 ```

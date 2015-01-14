@@ -24,20 +24,20 @@ First let's define the interface that we want. Remember the [interface segregati
 
 So what does our template engine actually need to do? For now we really just need a simple `render` method. Create a new folder in your `src/` folder with the name `Template` where you can put all the template related things.
 
-In there create a new interface `Engine.php` that looks like this:
+In there create a new interface `Renderer.php` that looks like this:
 
 ```php
 <?php
 
 namespace Example\Template;
 
-interface Engine
+interface Renderer
 {
     public function render($template, $data = []);
 }
 ```
 
-Now that this is sorted out, let's create the mustache adapter class. In the same folder, create the file `MustacheEngineAdapter.php` with the following content:
+Now that this is sorted out, let's create the implementation for mustache. In the same folder, create the file `MustacheRenderer.php` with the following content:
 
 ```php
 <?php
@@ -46,7 +46,7 @@ namespace Example\Template;
 
 use Mustache_Engine;
 
-class MustacheEngineAdapter implements Engine
+class MustacheRenderer implements Renderer
 {
     private $engine;
 
@@ -66,7 +66,7 @@ As you can see the adapter is really simple. While the original class had a lot 
 
 Of course we also have to add a definition in our `Dependencies.php` file because otherwise the injector won't know which implementation he has to inject when you hint for the interface. Add this line:
 
-`$injector->alias('Example\Template\Engine', 'Example\Template\MustacheEngineAdapter');`
+`$injector->alias('Example\Template\Renderer', 'Example\Template\MustacheRenderer');`
 
 Now in your `Homepage` controller, add the new dependency like this:
 
@@ -77,28 +77,26 @@ namespace Example\Controllers;
 
 use Http\Request;
 use Http\Response;
-use Example\Template\Engine as TemplateEngine;
+use Example\Template\Renderer;
 
 class Homepage
 {
     private $request;
     private $response;
-    private $templateEngine;
+    private $renderer;
 
     public function __construct(
         Request $request, 
         Response $response,
-        TemplateEngine $templateEngine
+        Renderer $renderer
     ) {
         $this->request = $request;
         $this->response = $response;
-        $this->templateEngine = $templateEngine;
+        $this->renderer = $renderer;
     }
 
 ...
 ```
-
-As you can see I imported the engine with an alias. Without the full namespace it would be relatively unclear what a class does if it is just referenced by `Engine`. Also, another part of the application might also have a class with the name `Engine`. So to avoid that I give it a short and descriptive alias.
 
 We also have to rewrite the `show` method. Please note that while we are just passing in a simple array, Mustache also gives you the option to pass in a view context object. We will go over this later, for now let's keep it as simple as possible.
 
@@ -108,7 +106,7 @@ We also have to rewrite the `show` method. Please note that while we are just pa
         $data = [
             'name' => $this->request->getParameter('name', 'stranger'),
         ];
-        $html = $this->templateEngine->render('Hello {{name}}', $data);
+        $html = $this->renderer->render('Hello {{name}}', $data);
         $this->response->setContent($html);
     }
 ```
@@ -132,7 +130,11 @@ In your project root folder, create a `templates` folder. In there, create a fil
 Hello {{ name }}
 ```
 
-Now you can go back to your `Homepage` controller and change the render line to `$content = $this->templateEngine->render('Homepage', $data);`
+Now you can go back to your `Homepage` controller and change the render line to `$content = $this->renderer
+
+
+
+->render('Homepage', $data);`
 
 Navigate to the hello page in your browser to make sure everything works. And as always, don't forget to commit your changes.
 
