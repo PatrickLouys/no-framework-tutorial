@@ -1,4 +1,4 @@
-[<< previous](8-dependency-injector.md) | [next >>](10-dynamic-pages.md)
+[<< previous](08-dependency-injector.md) | [next >>](10-dynamic-pages.md)
 
 ### Templating
 
@@ -136,4 +136,4 @@ Now you can go back to your `Homepage` controller and change the render line to 
 
 Navigate to the hello page in your browser to make sure everything works. And as always, don't forget to commit your changes.
 
-[<< previous](8-dependency-injector.md) | [next >>](10-dynamic-pages.md)
+[<< previous](08-dependency-injector.md) | [next >>](10-dynamic-pages.md)

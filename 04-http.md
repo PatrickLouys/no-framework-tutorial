@@ -1,4 +1,4 @@
-[<< previous](3-error-handler.md) | [next >>](5-router.md)
+[<< previous](03-error-handler.md) | [next >>](05-router.md)
 
 ### HTTP
 
@@ -61,4 +61,4 @@ Remember that the object is only storing data, so you if you set multiple status
 
 I will show you in later parts how to use the different features of the components. In the meantime, feel free to read the [documentation](https://github.com/PatrickLouys/http) or the source code if you want to find out how something works.
 
-[<< previous](3-error-handler.md) | [next >>](5-router.md)
+[<< previous](03-error-handler.md) | [next >>](05-router.md)

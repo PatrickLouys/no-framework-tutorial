@@ -1,4 +1,4 @@
-[<< previous](5-router.md) | [next >>](7-inversion-of-control.md)
+[<< previous](05-router.md) | [next >>](07-inversion-of-control.md)
 
 ### Dispatching to a Class
 
@@ -53,4 +53,4 @@ So instead of just calling a method you are now instantiating an object and then
 
 Now if you visit `http://localhost:8000/` everything should work. If not, go back and debug. And of course don't forget to commit your changes.
 
-[<< previous](5-router.md) | [next >>](7-inversion-of-control.md)
+[<< previous](05-router.md) | [next >>](07-inversion-of-control.md)
