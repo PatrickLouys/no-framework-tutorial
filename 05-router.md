@@ -1,4 +1,4 @@
-[<< previous](4-http.md) | [next >>](6-dispatching-to-a-class.md)
+[<< previous](04-http.md) | [next >>](06-dispatching-to-a-class.md)
 
 ### Router
 
@@ -76,4 +76,4 @@ $dispatcher = \FastRoute\simpleDispatcher($routeDefinitionCallback);
 
 This is already an improvement, but now all the handler code is in the `Routers.php` file. This is not optimal, so let's fix that in the next part.
 
-[<< previous](4-http.md) | [next >>](6-dispatching-to-a-class.md)
+[<< previous](04-http.md) | [next >>](06-dispatching-to-a-class.md)

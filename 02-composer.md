@@ -1,4 +1,4 @@
-[<< previous](1-front-controller.md) | [next >>](3-error-handler.md)
+[<< previous](01-front-controller.md) | [next >>](03-error-handler.md)
 
 ### Composer
 
@@ -51,4 +51,4 @@ This will exclude the included file and folder from your commits. For which now 
 
 Now you have successfully created an empty playground which you can use to set up your project.
 
-[<< previous](1-front-controller.md) | [next >>](3-error-handler.md)
+[<< previous](01-front-controller.md) | [next >>](03-error-handler.md)

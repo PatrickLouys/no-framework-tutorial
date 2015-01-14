@@ -1,4 +1,4 @@
-[next >>](2-composer.md)
+[next >>](02-composer.md)
 
 ### Front Controller
 
@@ -40,4 +40,4 @@ If there is an error, go back and try to fix it. If you only see a blank page, c
 
 Now would be a good time to commit your progress. If you are not already using Git, set up a repository now. This is not a Git tutorial so I won't go over the details. But using version control should be a habit, even if it is just for a tutorial project like this.
 
-[next >>](2-composer.md)
+[next >>](02-composer.md)

@@ -1,4 +1,4 @@
-[<< previous](2-composer.md) | [next >>](4-http.md)
+[<< previous](02-composer.md) | [next >>](04-http.md)
 
 ### Error Handler
 
@@ -59,4 +59,4 @@ throw new \Exception;
 
 You should now see a error page with the line highlighted where you throw the exception. If not, go back and debug until you get it working. Now would also be a good time for another commit.
 
-[<< previous](2-composer.md) | [next >>](4-http.md)
+[<< previous](02-composer.md) | [next >>](04-http.md)

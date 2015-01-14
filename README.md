@@ -10,17 +10,17 @@ I saw a lot of people coming into the Stack Overflow PHP chatroom and asking if 
 
 So my goal with this is to provide an easy resource that people can be pointed to. In most cases a framework does not make sense and writing an application from scratch with the help of some third party packages is much, much easier than some people think.
 
-So let's get started right away with the [first part](1-front-controller.md).
+So let's get started right away with the [first part](01-front-controller.md).
 
 ### Parts
 
-1. [Front Controller](1-front-controller.md)
-2. [Composer](2-composer.md)
-3. [Error Handler](3-error-handler.md)
-4. [HTTP](4-http.md)
-5. [Router](5-router.md)
-6. [Dispatching to a Class](6-dispatching-to-a-class.md)
-7. [Inversion of Control](7-inversion-of-control.md)
-8. [Dependency Injector](8-dependency-injector.md)
-9. [Templating](9-templating.md)
+1. [Front Controller](01-front-controller.md)
+2. [Composer](02-composer.md)
+3. [Error Handler](03-error-handler.md)
+4. [HTTP](04-http.md)
+5. [Router](05-router.md)
+6. [Dispatching to a Class](06-dispatching-to-a-class.md)
+7. [Inversion of Control](07-inversion-of-control.md)
+8. [Dependency Injector](08-dependency-injector.md)
+9. [Templating](09-templating.md)
 10. [Dynamic Pages](10-dynamic-pages.md)
