@@ -22,6 +22,8 @@ Inside the `public` folder you can now create your `index.php`. Remember that yo
 require __DIR__ . '/../src/Bootstrap.php';
 ```
 
+`__DIR__` is a [magic constant](http://php.net/manual/en/language.constants.predefined.php) that contains the path of the directory. By using it, you can make sure that the `require` always uses the same relative path to the file it is used in. Otherwise, if you call the `index.php` from a different folder it will not find the file.
+
 The `Bootstrap.php` will be the file that wires your application together. We will get to it shortly.
 
 The rest of the public folder is reserved for your public asset files (like JavaScript files and stylesheets).
