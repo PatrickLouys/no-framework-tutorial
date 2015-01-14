@@ -48,7 +48,7 @@ namespace Example\Page;
 
 interface PageReader
 {
-    public function getContentBySlug($slug);
+    public function readBySlug($slug);
 }
 ```
 
@@ -73,7 +73,7 @@ class FilePageReader implements PageReader
         $this->pageFolder = $pageFolder;
     }
 
-    public function getContentBySlug($slug)
+    public function readBySlug($slug)
     {
         return 'I am a placeholder';
     }
@@ -106,7 +106,7 @@ Now go back to the `Page` controller and change the `show` method to the followi
 public function show($params)
 {
     $slug = $params['slug'];
-    $data['content'] = $this->pageReader->getContentBySlug($slug);
+    $data['content'] = $this->pageReader->readBySlug($slug);
     $html = $this->renderer->render('Page', $data);
     $this->response->setContent($html);
 }
@@ -150,7 +150,7 @@ So far so good, now let's make our `FilePageReader` actually do some work.
 Again, let's check first that the proper type was passed into the method:
 
 ```php
-public function getContentBySlug($slug)
+public function readBySlug($slug)
 {
     if (!is_string($slug)) {
         throw new InvalidArgumentException('slug must be a string');
@@ -177,7 +177,7 @@ class InvalidPageException extends Exception
 }
 ```
 
-Then in the `FilePageReader` file add this code at the end of your `getContentBySlug` method:
+Then in the `FilePageReader` file add this code at the end of your `readBySlug` method:
 
 ```
 $path = "$this->pageFolder/$slug.md";
@@ -201,7 +201,7 @@ public function show($params)
     $slug = $params['slug'];
 
     try {
-        $data['content'] = $this->pageReader->getContentBySlug($slug);
+        $data['content'] = $this->pageReader->readBySlug($slug);
     } catch (InvalidPageException $e) {
         $this->response->setStatusCode(404);
         return $this->response->setContent('404 - Page not found');
