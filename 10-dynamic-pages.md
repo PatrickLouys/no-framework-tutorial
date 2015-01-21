@@ -1,4 +1,4 @@
-[<< previous](09-templating.md)
+[<< previous](09-templating.md) | [next >>](11-page-menu.md)
 
 ### Dynamic Pages
 
@@ -223,4 +223,4 @@ Try a few different URLs to check that everything is working as it should. If so
 
 And as always, don't forget to commit your changes.
 
-[<< previous](09-templating.md)
+[<< previous](09-templating.md) | [next >>](11-page-menu.md)
