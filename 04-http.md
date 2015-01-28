@@ -35,13 +35,15 @@ To actually send something back, you will also need to add the following snippet
 
 ```php
 foreach ($response->getHeaders() as $header) {
-    header($header);
+    header($header, false);
 }
 
 echo $response->getContent();
 ```
 
 This will send the response data to the browser. If you don't do this, nothing happens as the `Response` object only stores data. This is handled differently by most other HTTP components where the classes send data back to the browser as a side-effect, so keep that in mind if you use another component.
+
+The second parameter of `header()` is false because otherwise existing headers will be overwritten.
 
 Right now it is just sending an empty response back to the browser with the status code `200`; to change that, add the following code between the code snippets from above:
 
