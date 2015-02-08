@@ -8,7 +8,7 @@ A good quick read on this is [ircmaxell on templating](http://blog.ircmaxell.com
 
 For this tutorial we will use a PHP implementation of [Mustache](https://github.com/bobthecow/mustache.php). So install that package before you continue.
 
-Other well known alternatives would be [Twig](http://twig.sensiolabs.org/) or [Smarty](http://www.smarty.net/), but they are both pretty bloated and offer too much functionality for just a template engine.
+Another well known alternative would be [Twig](http://twig.sensiolabs.org/).
 
 Now please go and have a look at the source code of the [engine class](https://github.com/bobthecow/mustache.php/blob/master/src/Mustache/Engine.php). As you can see, the class does not implement an interface.
 
