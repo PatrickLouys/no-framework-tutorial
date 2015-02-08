@@ -118,12 +118,16 @@ To make this change we need to pass an options array to the `Mustache_Engine` co
 ```php
 $injector->define('Mustache_Engine', [
     ':options' => [
-        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates'),
+        'loader' => new Mustache_Loader_FilesystemLoader(dirname(__DIR__) . '/templates', [
+            'extension' => '.html',
+        ]),
     ],
 ]);
 ```
 
-In your project root folder, create a `templates` folder. In there, create a file `Homepage.mustache`. The content of the file should look like this:
+We are passing an options array because we want to use the `.html` extension instead of the default `.mustache` extension. Why? Other template languages use a similar syntax and if we ever decide to change to something else then we won't have to rename all the template files.
+
+In your project root folder, create a `templates` folder. In there, create a file `Homepage.html`. The content of the file should look like this:
 
 ```
 <h1>Hello World</h1>
