@@ -80,4 +80,6 @@ At the top of your `Homepage.html` file add this code:
 
 Now if you refresh the homepage in the browser, you should see a link.
 
+to be continued...
+
 [<< previous](10-dynamic-pages.md)
