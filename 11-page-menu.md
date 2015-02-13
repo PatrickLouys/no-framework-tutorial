@@ -178,4 +178,5 @@ Also delete the following line from the `Homepage` controller:
 Once that is done, you should see the menu on both the homepage and your subpages. 
 
 to be continued...
+
 [<< previous](10-dynamic-pages.md)
