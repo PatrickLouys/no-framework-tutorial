@@ -72,7 +72,7 @@ $data = [
 
 At the top of your `Homepage.html` file add this code:
 
-```
+```php
 {% for item in menuItems %}
     <a href="{{ item.href }}">{{ item.text }}</a><br>
 {% endfor %}
@@ -118,6 +118,64 @@ If you refresh your homepage now, you should see the menu. But if you go to a su
 
 The problem is that we are only passing the `menuItems` to the homepage. Doing that over and over again for all pages would be a bit tedious and a lot of work if something changes. So let's fix that in the next step.
 
-to be continued...
+We could create a global variable that is usable by all templates, but that is not a good idea here. We will add different parts of the site in the future like an admin area and we will have a different menu there.
 
+So instead we will use a custom renderer for the frontend. First we create an empty interface that extends the existing `Renderer` interface. 
+
+```php
+<?php
+
+namespace Example\Template;
+
+interface FrontendRenderer extends Renderer {}
+```
+
+By extending it we are saying that any class implementing the `FrontendRenderer` interface can be used where a `Renderer` is required. But not the other way around, because the `FrontendRenderer` can have more functionality as long as it still fulfills the `Renderer` interface.
+
+Now of course we also need a class that implements the new interface.
+
+
+```php
+<?php
+
+namespace Example\Template;
+
+class FrontendTwigRenderer implements FrontendRenderer
+{
+    private $renderer;
+
+    public function __construct(Renderer $renderer)
+    {
+        $this->renderer = $renderer;
+    }
+
+    public function render($template, $data = [])
+    {
+        $data = array_merge($data, [
+            'menuItems' => [['href' => '/', 'text' => 'Homepage']],
+        ]);
+        return $this->renderer->render($template, $data);
+    }
+}
+```
+
+As you can see we have a dependency on a `Renderer` in this class. This class is a wrapper for our `Renderer` and adds the `menuItems` to all `$data` arrays.
+
+Of course we also need to add another alias to the dependencies file.
+
+```php 
+$injector->alias('Example\Template\FrontendRenderer', 'Example\Template\FrontendTwigRenderer');
+```
+
+Now go to your controllers and exchange all references of `Renderer` with `FrontendRenderer`. Make sure you change it in both the `use` statement at the top and in the constructor.
+
+Also delete the following line from the `Homepage` controller:
+
+```php
+'menuItems' => [['href' => '/', 'text' => 'Homepage']],
+```
+
+Once that is done, you should see the menu on both the homepage and your subpages. 
+
+to be continued...
 [<< previous](10-dynamic-pages.md)
