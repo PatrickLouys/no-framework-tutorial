@@ -80,6 +80,44 @@ At the top of your `Homepage.html` file add this code:
 
 Now if you refresh the homepage in the browser, you should see a link.
 
+The menu works on the homepage, but we want it on all our pages. We could copy it over to all the template files, but that would be a bad idea. Then if something changes, you would have to go change all the files.
+
+So instead we are going to use a layout that can be used by all the templates.
+
+Create a `Layout.html` in your `templates` folder with the following content:
+
+```php
+{% for item in menuItems %}
+    <a href="{{ item['href'] }}">{{ item['text'] }}</a><br>
+{% endfor %}
+<hr>
+{% block content %}
+{% endblock %}
+```
+
+Then change your `Homepage.html` to this:
+
+```php
+{% extends "Layout.html" %}
+{% block content %}
+    <h1>Hello World</h1>
+    Hello {{ name }}
+{% endblock %}
+```
+
+And your `Page.html` to this:
+
+```php
+{% extends "Layout.html" %}
+{% block content %}
+    {{ content }}
+{% endblock %}
+```
+
+If you refresh your homepage now, you should see the menu. But if you go to a subpage, the menu is not there but the `<hr>` line is. 
+
+The problem is that we are only passing the `menuItems` to the homepage. Doing that over and over again for all pages would be a bit tedious and a lot of work if something changes. So let's fix that in the next step.
+
 to be continued...
 
 [<< previous](10-dynamic-pages.md)
