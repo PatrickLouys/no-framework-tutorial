@@ -66,7 +66,7 @@ To start we will just send a hardcoded array to the template. Go to you `Homepag
 ```php
 $data = [
     'name' => $this->request->getParameter('name', 'stranger'),
-    'menuItems' => 'menuItems' => [['href' => '/', 'text' => 'Homepage']],
+    'menuItems' => [['href' => '/', 'text' => 'Homepage']],
 ];
 ```
 
