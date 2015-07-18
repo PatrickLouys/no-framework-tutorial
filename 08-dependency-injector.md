@@ -11,7 +11,7 @@ Install the Auryn package and then create a new file called `Dependencies.php` i
 ```php
 <?php
 
-$injector = new \Auryn\Provider;
+$injector = new \Auryn\Injector;
 
 $injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpRequest');
