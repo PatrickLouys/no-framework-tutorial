@@ -175,8 +175,84 @@ Also delete the following line from the `Homepage` controller:
 'menuItems' => [['href' => '/', 'text' => 'Homepage']],
 ```
 
-Once that is done, you should see the menu on both the homepage and your subpages. 
+Once that is done, you should see the menu on both the homepage and your subpages.
 
-to be continued...
+Everything should work now, but it doesn't really make sense that the menu is defined in the `FrontendTwigRenderer`. So let's refactor that and move it into it's own class.
+
+Right now the menu is defined in the array, but it is very likely that this will change in the future. Maybe you want to define it in the database or maybe you even want to generate it dynamically based on the pages available. We don't have this information and things might change in the future.
+
+So let's do the right thing here and start with an interface again. But first, create a new order in the `src` directory for the menu related things. `Menu` sounds like a reasonable name, doesn't it?
+
+```php
+<?php
+
+namespace Example\Menu;
+
+interface MenuReader
+{
+    public function readMenu();
+}
+```
+
+And our very simple implementation will look like this:
+
+```php
+<?php
+
+namespace Example\Menu;
+
+class ArrayMenuReader implements MenuReader
+{
+    public function readMenu()
+    {
+        return [['href' => '/', 'text' => 'Homepage']];
+    }
+}
+```
+
+This is only a temporary solution to keep things moving forward. We are going to revisit this later.
+
+Before we continue, let's edit the dependencies file to make sure that our application knows which implementation to use when the interface is requested.
+
+Add these lines above the `return` statement:
+
+```php
+$injector->alias('Example\Menu\MenuReader', 'Example\Menu\ArrayMenuReader');
+$injector->share('Example\Menu\FileMenuReader');
+```
+
+Now you need to change out the hardcoded array in the `FrontendTwigRenderer` class to make it use our new `MenuReader` instead. Give it a try without looking at the solution below.
+
+Did you finish it or did you get stuck? Or are you just lazy? Doesn't matter, here is a working solution:
+
+```php
+<?php
+
+namespace Example\Template;
+
+use Example\Menu\MenuReader;
+
+class FrontendTwigRenderer implements FrontendRenderer
+{
+    private $renderer;
+    private $menuReader;
+
+    public function __construct(Renderer $renderer, MenuReader $menuReader)
+    {
+        $this->renderer = $renderer;
+        $this->menuReader = $menuReader;
+    }
+
+    public function render($template, $data = [])
+    {
+        $data = array_merge($data, [
+            'menuItems' => $this->menuReader->readMenu(),
+        ]);
+        return $this->renderer->render($template, $data);
+    }
+}
+```
+
+Everything still working? Awesome. Commit everything and move on to the next chapter.
 
 [<< previous](10-dynamic-pages.md)
