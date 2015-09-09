@@ -1,4 +1,4 @@
-[<< previous](10-dynamic-pages.md)
+[<< previous](10-dynamic-pages.md) | [next >>](12-frontend.md)
 
 ### Page Menu
 
@@ -205,7 +205,9 @@ class ArrayMenuReader implements MenuReader
 {
     public function readMenu()
     {
-        return [['href' => '/', 'text' => 'Homepage']];
+        return [
+            ['href' => '/', 'text' => 'Homepage'],
+        ];
     }
 }
 ```
@@ -255,4 +257,4 @@ class FrontendTwigRenderer implements FrontendRenderer
 
 Everything still working? Awesome. Commit everything and move on to the next chapter.
 
-[<< previous](10-dynamic-pages.md)
+[<< previous](10-dynamic-pages.md) | [next >>](12-frontend.md)
