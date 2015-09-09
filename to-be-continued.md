@@ -4,7 +4,7 @@ Congratulations. You made it this far.
 
 I hope you were following the tutorial step by step and not just skipping over the chapters :)
 
-I have received good feedback so far so I decided to start writing a book. [Click here](http://artofphp.com/) if you want to learn more or stay updated with how the book is coming along.
+I have received good feedback so far so I decided to start writing a book. [Click here](http://artofphp.com/) to learn more about that.
 
 But don't worry, I will also keep working on this tutorial. I was a bit lazy over the summer but now that it getting colder again I will have much more time to spend on the tutorial.
 
