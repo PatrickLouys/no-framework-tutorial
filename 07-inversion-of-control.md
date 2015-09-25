@@ -13,7 +13,7 @@ Change your `Homepage` controller to the following:
 ```php
 <?php
 
-namespace Example\Controller;
+namespace Example\Controllers;
 
 use Http\Response;
 
