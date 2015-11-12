@@ -13,7 +13,7 @@ Install the Auryn package and then create a new file called `Dependencies.php` i
 
 $injector = new \Auryn\Injector;
 
-$injector->alias('Http\Response', 'Http\HttpResponse');
+$injector->alias('Http\Request', 'Http\HttpRequest');
 $injector->share('Http\HttpRequest');
 $injector->define('Http\HttpRequest', [
     ':get' => $_GET,
@@ -23,7 +23,7 @@ $injector->define('Http\HttpRequest', [
     ':server' => $_SERVER,
 ]);
 
-$injector->alias('Http\Request', 'Http\HttpRequest');
+$injector->alias('Http\Response', 'Http\HttpResponse');
 $injector->share('Http\HttpResponse');
 
 return $injector;
