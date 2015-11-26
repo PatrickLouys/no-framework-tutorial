@@ -134,11 +134,7 @@ In your project root folder, create a `templates` folder. In there, create a fil
 Hello {{ name }}
 ```
 
-Now you can go back to your `Homepage` controller and change the render line to `$content = $this->renderer
-
-
-
-->render('Homepage', $data);`
+Now you can go back to your `Homepage` controller and change the render line to `$html = $this->renderer->render('Homepage', $data);`
 
 Navigate to the hello page in your browser to make sure everything works. And as always, don't forget to commit your changes.
 
