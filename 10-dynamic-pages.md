@@ -179,7 +179,7 @@ class InvalidPageException extends Exception
 
 Then in the `FilePageReader` file add this code at the end of your `readBySlug` method:
 
-```
+```php
 $path = "$this->pageFolder/$slug.md";
 
 if(!file_exists($path)) {
