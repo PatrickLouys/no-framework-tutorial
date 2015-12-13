@@ -220,7 +220,7 @@ Add these lines above the `return` statement:
 
 ```php
 $injector->alias('Example\Menu\MenuReader', 'Example\Menu\ArrayMenuReader');
-$injector->share('Example\Menu\FileMenuReader');
+$injector->share('Example\Menu\ArrayMenuReader');
 ```
 
 Now you need to change out the hardcoded array in the `FrontendTwigRenderer` class to make it use our new `MenuReader` instead. Give it a try without looking at the solution below.
