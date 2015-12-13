@@ -181,7 +181,7 @@ Everything should work now, but it doesn't really make sense that the menu is de
 
 Right now the menu is defined in the array, but it is very likely that this will change in the future. Maybe you want to define it in the database or maybe you even want to generate it dynamically based on the pages available. We don't have this information and things might change in the future.
 
-So let's do the right thing here and start with an interface again. But first, create a new order in the `src` directory for the menu related things. `Menu` sounds like a reasonable name, doesn't it?
+So let's do the right thing here and start with an interface again. But first, create a new folder in the `src` directory for the menu related things. `Menu` sounds like a reasonable name, doesn't it?
 
 ```php
 <?php
@@ -220,7 +220,7 @@ Add these lines above the `return` statement:
 
 ```php
 $injector->alias('Example\Menu\MenuReader', 'Example\Menu\ArrayMenuReader');
-$injector->share('Example\Menu\FileMenuReader');
+$injector->share('Example\Menu\ArrayMenuReader');
 ```
 
 Now you need to change out the hardcoded array in the `FrontendTwigRenderer` class to make it use our new `MenuReader` instead. Give it a try without looking at the solution below.
