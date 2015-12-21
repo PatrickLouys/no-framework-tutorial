@@ -40,14 +40,9 @@ In the autoload part you can see that I am using the `Example` namespace for the
 
 Open a new console window and navigate into your project root folder. There run `composer update`.
 
-Composer creates a `composer.lock` file that locks in your dependencies and a vendor directory. To remove those from your Git repository, add a new file in your project root folder called `.gitignore` with the following content:
+Composer creates a `composer.lock` file that locks in your dependencies and a vendor directory. 
 
-```php
-composer.lock
-vendor/
-```
-
-This will exclude the included file and folder from your commits. For which now would be a good time, by the way.
+Committing the `composer.lock` file into version control is generally good practice for projects. It allows continuation testing tools (such as [Travis CI](https://travis-ci.org/)) to run the tests against the exact same versions of libraries that you're developing against. It also allows all people who are working on the project to use the exact same version of libraries i.e. it eliminates a source of "works on my machine" problems.
 
 Now you have successfully created an empty playground which you can use to set up your project.
 
