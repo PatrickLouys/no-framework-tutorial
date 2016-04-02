@@ -35,7 +35,7 @@ class Homepage
 
 Note that you are [importing](http://php.net/manual/en/language.namespaces.importing.php) `Http\Response` at the top of the file. This means that whenever you use `Response` inside this file, it will resolve to the fully qualified name.
 
-In the contructor you are now explicitly asking for a `Http\Response`. In this case, `Http\Response` is an interface. So any class that implements the interface can be injected. See [type hinting](http://php.net/manual/en/language.oop5.typehinting.php) and [interfaces](http://php.net/manual/en/language.oop5.interfaces.php) for reference.
+In the constructor you are now explicitly asking for a `Http\Response`. In this case, `Http\Response` is an interface. So any class that implements the interface can be injected. See [type hinting](http://php.net/manual/en/language.oop5.typehinting.php) and [interfaces](http://php.net/manual/en/language.oop5.interfaces.php) for reference.
 
 Now the code will result in an error because you are not actually injecting anything. So let's fix that in your `Bootstrap.php` where you dispatch when a route was found:
 
