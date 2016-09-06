@@ -45,7 +45,7 @@ This will send the response data to the browser. If you don't do this, nothing h
 
 The second parameter of `header()` is false because otherwise existing headers will be overwritten.
 
-Right now it is just sending an empty response back to the browser with the status code `200`; to change that, add the following code between the code snippets from above:
+Right now it is just sending an empty response back to the browser with the status code `200`; to change that, add the following code before sending the headers through the foreach above:
 
 ```php
 $content = '<h1>Hello World</h1>';
