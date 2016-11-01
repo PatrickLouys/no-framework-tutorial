@@ -17,12 +17,14 @@ So instead of doing that, create a folder in your project folder called `public`
 Inside the `public` folder you can now create your `index.php`. Remember that you don't want to expose anything here, so put just the following code in there:
 
 ```php
-<?php 
+<?php declare(strict_types = 1); 
 
 require __DIR__ . '/../src/Bootstrap.php';
 ```
 
 `__DIR__` is a [magic constant](http://php.net/manual/en/language.constants.predefined.php) that contains the path of the directory. By using it, you can make sure that the `require` always uses the same relative path to the file it is used in. Otherwise, if you call the `index.php` from a different folder it will not find the file.
+
+`declare(strict_types = 1);` sets the current file to [strict typing](http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict). In this tutorial we are going to use this for all PHP files. This means that you can't just pass an integer as a parameter to a method that requires a string. If you don't use strict mode, it would be automatically casted to the required type. With strict mode, it will throw an Exception if it is the wrong type.
 
 The `Bootstrap.php` will be the file that wires your application together. We will get to it shortly.
 
@@ -31,7 +33,7 @@ The rest of the public folder is reserved for your public asset files (like Java
 Now navigate inside your `src` folder and create a new `Bootstrap.php` file with the following content:
 
 ```php
-<?php 
+<?php declare(strict_types = 1);
 
 echo 'Hello World!';
 ```
