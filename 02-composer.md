@@ -26,7 +26,7 @@ Add the following content to the file:
         }
     ],
     "require": {
-        "php": ">=5.5.0"
+        "php": ">=7.0.0"
     },
     "autoload": {
         "psr-4": {
