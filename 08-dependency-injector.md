@@ -9,7 +9,7 @@ There is only one injector that I can recommend: [Auryn](https://github.com/rdlo
 Install the Auryn package and then create a new file called `Dependencies.php` in your `src/` folder. In there add the following content:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 $injector = new \Auryn\Injector;
 
@@ -63,7 +63,7 @@ Now all your controller constructor dependencies will be automatically resolved 
 Go back to your `Homepage` controller and change it to the following:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Controllers;
 
