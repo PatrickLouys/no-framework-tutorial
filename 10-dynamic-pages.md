@@ -42,20 +42,20 @@ So let's put that functionality into a separate class. There is a good chance th
 In your 'src' folder, create a new folder `Page`. In there we will put all the page related classes. Add a new file in there called `PageReader.php` with this content:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Page;
 
 interface PageReader
 {
-    public function readBySlug($slug);
+    public function readBySlug($slug) : string;
 }
 ```
 
 For the implementation, create a `FilePageReader.php` file. The file will looks like this:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Page;
 
@@ -73,7 +73,7 @@ class FilePageReader implements PageReader
         $this->pageFolder = $pageFolder;
     }
 
-    public function readBySlug($slug)
+    public function readBySlug($slug) : string
     {
         return 'I am a placeholder';
     }
@@ -119,7 +119,7 @@ Did you get everything to work?
 If not, this is how the beginning of your controller should look now:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Controllers;
 
@@ -161,7 +161,7 @@ public function readBySlug($slug)
 We also need to be able to communicate that a page was not found. For this we can create a custom exception that we can catch later. In your `src/Page` folder, create a `InvalidPageException.php` file with this content:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Page;
 
