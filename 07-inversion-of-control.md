@@ -11,7 +11,7 @@ If this sounds a little complicated right now, don't worry. Just follow the tuto
 Change your `Homepage` controller to the following:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Controllers;
 
