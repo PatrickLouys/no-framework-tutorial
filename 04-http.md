@@ -15,11 +15,11 @@ In this tutorial I will use my own HTTP component, but of course you can use any
 Again, edit the `composer.json` to add the new component and then run `composer update`:
 
 ```json
-"require": {
-    "php": ">=5.5.0",
-    "filp/whoops": ">=1.1.2",
-    "patricklouys/http": ">=1.1.0"
-},
+  "require": {
+    "php": ">=7.0.0",
+    "filp/whoops": "~2.1",
+    "patricklouys/http": "~1.4"
+  },
 ```
 
 Now you can add the following below your error handler code in your `Bootstrap.php` (and don't forget to remove the exception):
