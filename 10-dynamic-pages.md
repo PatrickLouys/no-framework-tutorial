@@ -65,11 +65,8 @@ class FilePageReader implements PageReader
 {
     private $pageFolder;
 
-    public function __construct($pageFolder)
+    public function __construct(string $pageFolder)
     {
-        if (!is_string($pageFolder)) {
-            throw new InvalidArgumentException('pageFolder must be a string');
-        }
         $this->pageFolder = $pageFolder;
     }
 
@@ -83,8 +80,6 @@ class FilePageReader implements PageReader
 As you can see we are requiring the page folder path as a constructor argument. This makes the class flexible and if we decide to move files or write unit tests for the class, we can easily change the location with the constructor argument.
 
 You could also put the page related things into it's own package and reuse it in different applications. Because we are not tightly coupling things, things are very flexible.
-
-Because PHP does not have the ability to type hint for scalar values (things like strings and integers), we have to manually check that `$pageFolder` is a string. If we don't do that, there might be a bug in the future that is hard to find if a wrong type is injected. By throwing an exception, this can be caught and debugged immediately.
 
 This will do for now. Let's create a template file for our pages with the name `Page.html` in the `templates` folder. For now just add `{{ content }}` in there.
 
