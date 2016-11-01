@@ -30,7 +30,7 @@ For development that does not make sense though -- you want a nice error page. T
 Then after the error handler registration, throw an `Exception` to test if everything is working correctly. Your `Bootstrap.php` should now look similar to this:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example;
 
@@ -48,7 +48,7 @@ if ($environment !== 'production') {
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 } else {
     $whoops->pushHandler(function($e){
-        echo 'Friendly error page and send an email to the developer';
+        echo 'Todo: Friendly error page and send an email to the developer';
     });
 }
 $whoops->register();
