@@ -4,13 +4,13 @@
 
 PHP already has a few things built in to make working with HTTP easier. For example there are the [superglobals](http://php.net/manual/en/language.variables.superglobals.php) that contain the request information.
 
-These are good if you just want to get a small script up and running without much thought on maintenance. However, if you want to write clean, maintainable, [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) code, then you will want a class with a nice object-oriented interface that you can use in your application.
+These are good if you just want to get a small script up and running, something that won't be hard to maintain. However, if you want to write clean, maintainable, [SOLID](http://en.wikipedia.org/wiki/SOLID_%28object-oriented_design%29) code, then you will want a class with a nice object-oriented interface that you can use in your application instead.
 
 Once again, you don't have to reinvent the wheel and just install a package. I decided to write my own [HTTP component](https://github.com/PatrickLouys/http) because I did not like the existing components, but you don't have to do the same.
 
 Some alternatives: [Symfony HttpFoundation](https://github.com/symfony/HttpFoundation), [Nette HTTP Component](https://github.com/nette/http), [Aura Web](https://github.com/auraphp/Aura.Web), [sabre/http](https://github.com/fruux/sabre-http)
 
-In this tutorial I will use my own HTTP component, but of course you can use whichever package you like most. Just change the code accordingly.
+In this tutorial I will use my own HTTP component, but of course you can use any package that you like. You just have to adapt the code from the tutorial yourself.
 
 Again, edit the `composer.json` to add the new component and then run `composer update`:
 
