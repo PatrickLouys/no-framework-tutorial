@@ -10,7 +10,7 @@ I saw a lot of people coming into the Stack Overflow PHP chatroom and asking if 
 
 So my goal with this is to provide an easy resource that people can be pointed to. In most cases a framework does not make sense and writing an application from scratch with the help of some third party packages is much, much easier than some people think.
 
-**This tutorial was written for PHP 5.5 or newer versions.** If you are using an older version, please upgrade it before you start. I recommend that you use the [current stable version](http://php.net/downloads.php).
+**This tutorial was written for PHP 7.0 or newer versions.** If you are using an older version, please upgrade it before you start. I recommend that you use the [current stable version](http://php.net/downloads.php).
 
 So let's get started right away with the [first part](01-front-controller.md).
 
