@@ -11,7 +11,7 @@ We will need a descriptive name for the classes that handle the requests. For th
 Create a new folder inside the `src/` folder with the name `Controllers`.In this folder we will place all our controller classes. In there, create a `Homepage.php` file.
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Controllers;
 
