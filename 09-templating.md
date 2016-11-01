@@ -6,7 +6,7 @@ A template engine is not necessary with PHP because the language itself can take
 
 A good quick read on this is [ircmaxell on templating](http://blog.ircmaxell.com/2012/12/on-templating.html). Please also read [this](http://chadminick.com/articles/simple-php-template-engine.html) for a different opinion on the topic. Personally I don't have a strong opinion on the topic, so decide yourself which approach works better for you.
 
-For this tutorial we will use a PHP implementation of [Mustache](https://github.com/bobthecow/mustache.php). So install that package before you continue.
+For this tutorial we will use a PHP implementation of [Mustache](https://github.com/bobthecow/mustache.php). So install that package before you continue (`composer require mustache/mustache`).
 
 Another well known alternative would be [Twig](http://twig.sensiolabs.org/).
 
