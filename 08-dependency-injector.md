@@ -4,7 +4,7 @@
 
 A dependency injector resolves the dependencies of your class and makes sure that the correct objects are injected when the class is instantiated.
 
-There is only one injector that I can recommend: [Auryn](https://github.com/rdlowrey/Auryn). Sadly all the alternatives that I am aware of are using the [service locator antipattern](http://blog.ploeh.dk/2010/02/03/ServiceLocatorisanAnti-Pattern/).
+There is only one injector that I can recommend: [Auryn](https://github.com/rdlowrey/Auryn). Sadly all the alternatives that I am aware of are using the [service locator antipattern](http://blog.ploeh.dk/2010/02/03/ServiceLocatorisanAnti-Pattern/) in their documentation and examples.
 
 Install the Auryn package and then create a new file called `Dependencies.php` in your `src/` folder. In there add the following content:
 
