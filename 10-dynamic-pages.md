@@ -196,6 +196,8 @@ public function show($params)
 }
 ```
 
+Make sure that you use an `use` statement for the `InvalidPageException` at the top of the file.
+
 Try a few different URLs to check that everything is working as it should. If something is wrong, go back and debug it until it works.
 
 And as always, don't forget to commit your changes.
