@@ -44,4 +44,10 @@ If there is an error, go back and try to fix it. If you only see a blank page, c
 
 Now would be a good time to commit your progress. If you are not already using Git, set up a repository now. This is not a Git tutorial so I won't go over the details. But using version control should be a habit, even if it is just for a tutorial project like this.
 
+Some editors and IDE's put their own files into your project folders. If that is the case, create a `.gitignore` file in your project root and exclude the files/directories. Below is an example for PHPStorm:
+
+```
+.idea/
+```
+
 [next >>](02-composer.md)
