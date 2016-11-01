@@ -5,7 +5,7 @@
 
 I don't know about you, but I don't like to work on a site that looks two decades old. So let's improve the look of our little application.
 
-This is not a frontend tutorial, so we'll just [pure](http://purecss.io/) and call it a day.
+This is not a frontend tutorial, so we'll just use [pure](http://purecss.io/) and call it a day.
 
 First we need to change the `Layout.html` template. I don't want to waste your time with HTML and CSS, so I'll just provide the code for you to copy paste.
 
