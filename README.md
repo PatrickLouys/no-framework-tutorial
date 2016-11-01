@@ -27,3 +27,4 @@ So let's get started right away with the [first part](01-front-controller.md).
 9. [Templating](09-templating.md)
 10. [Dynamic Pages](10-dynamic-pages.md)
 11. [Page Menu](11-page-menu.md)
+12. [Frontend](12-frontend.md)
