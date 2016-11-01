@@ -44,6 +44,12 @@ Composer creates a `composer.lock` file that locks in your dependencies and a ve
 
 Committing the `composer.lock` file into version control is generally good practice for projects. It allows continuation testing tools (such as [Travis CI](https://travis-ci.org/)) to run the tests against the exact same versions of libraries that you're developing against. It also allows all people who are working on the project to use the exact same version of libraries i.e. it eliminates a source of "works on my machine" problems.
 
+That being said, [you don't want to put the actual source code of your dependencies in your git repository](https://getcomposer.org/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md). So let's add a rule to our `.gitignore` file:
+
+```
+vendor/
+```
+
 Now you have successfully created an empty playground which you can use to set up your project.
 
 [<< previous](01-front-controller.md) | [next >>](03-error-handler.md)
