@@ -9,7 +9,7 @@ Our first feature will be dynamic pages generated from [markdown](http://en.wiki
 Create a `Page` controller with the following content:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Controllers;
 
