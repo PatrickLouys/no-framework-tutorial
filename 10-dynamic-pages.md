@@ -48,7 +48,7 @@ namespace Example\Page;
 
 interface PageReader
 {
-    public function readBySlug($slug) : string;
+    public function readBySlug(string $slug) : string;
 }
 ```
 
@@ -70,7 +70,7 @@ class FilePageReader implements PageReader
         $this->pageFolder = $pageFolder;
     }
 
-    public function readBySlug($slug) : string
+    public function readBySlug(string $slug) : string
     {
         return 'I am a placeholder';
     }
@@ -142,18 +142,7 @@ class Page
 
 So far so good, now let's make our `FilePageReader` actually do some work.
 
-Again, let's check first that the proper type was passed into the method:
-
-```php
-public function readBySlug($slug)
-{
-    if (!is_string($slug)) {
-        throw new InvalidArgumentException('slug must be a string');
-    }
-}
-```
-
-We also need to be able to communicate that a page was not found. For this we can create a custom exception that we can catch later. In your `src/Page` folder, create a `InvalidPageException.php` file with this content:
+We need to be able to communicate that a page was not found. For this we can create a custom exception that we can catch later. In your `src/Page` folder, create a `InvalidPageException.php` file with this content:
 
 ```php
 <?php declare(strict_types = 1);
@@ -206,13 +195,6 @@ public function show($params)
     $this->response->setContent($html);
 }
 ```
-
-Add this at the top of your file:
-```php
-use Example\Page\InvalidPageException;
-```
-
-It is important that you don't forget this step, otherwise it will try to catch the wrong exception (it's looking in the wrong namespace) and thus will never catch it. 
 
 Try a few different URLs to check that everything is working as it should. If something is wrong, go back and debug it until it works.
 
