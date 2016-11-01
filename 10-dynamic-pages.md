@@ -166,7 +166,7 @@ Then in the `FilePageReader` file add this code at the end of your `readBySlug` 
 ```php
 $path = "$this->pageFolder/$slug.md";
 
-if(!file_exists($path)) {
+if (!file_exists($path)) {
     throw new InvalidPageException($slug);
 }
 
