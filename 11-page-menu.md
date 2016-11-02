@@ -21,7 +21,7 @@ But before we start, install the latest version of Twig with composer (`composer
 Then create the a `TwigRenderer.php` in your `src/Template` folder that looks like this:
 
 ```php 
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Template;
 
@@ -36,7 +36,7 @@ class TwigRenderer implements Renderer
         $this->renderer = $renderer;
     }
 
-    public function render($template, $data = [])
+    public function render($template, $data = []) : string
     {
         return $this->renderer->render("$template.html", $data);
     }
@@ -123,7 +123,7 @@ We could create a global variable that is usable by all templates, but that is n
 So instead we will use a custom renderer for the frontend. First we create an empty interface that extends the existing `Renderer` interface. 
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Template;
 
@@ -136,7 +136,7 @@ Now of course we also need a class that implements the new interface.
 
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Template;
 
@@ -149,7 +149,7 @@ class FrontendTwigRenderer implements FrontendRenderer
         $this->renderer = $renderer;
     }
 
-    public function render($template, $data = [])
+    public function render($template, $data = []) : string
     {
         $data = array_merge($data, [
             'menuItems' => [['href' => '/', 'text' => 'Homepage']],
@@ -184,26 +184,26 @@ Right now the menu is defined in the array, but it is very likely that this will
 So let's do the right thing here and start with an interface again. But first, create a new folder in the `src` directory for the menu related things. `Menu` sounds like a reasonable name, doesn't it?
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Menu;
 
 interface MenuReader
 {
-    public function readMenu();
+    public function readMenu() : array;
 }
 ```
 
 And our very simple implementation will look like this:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Menu;
 
 class ArrayMenuReader implements MenuReader
 {
-    public function readMenu()
+    public function readMenu() : array
     {
         return [
             ['href' => '/', 'text' => 'Homepage'],
@@ -228,7 +228,7 @@ Now you need to change out the hardcoded array in the `FrontendTwigRenderer` cla
 Did you finish it or did you get stuck? Or are you just lazy? Doesn't matter, here is a working solution:
 
 ```php
-<?php
+<?php declare(strict_types = 1);
 
 namespace Example\Template;
 
@@ -245,7 +245,7 @@ class FrontendTwigRenderer implements FrontendRenderer
         $this->menuReader = $menuReader;
     }
 
-    public function render($template, $data = [])
+    public function render($template, $data = []) : string
     {
         $data = array_merge($data, [
             'menuItems' => $this->menuReader->readMenu(),
