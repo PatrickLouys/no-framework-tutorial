@@ -16,7 +16,7 @@ Now you might wonder why we didn't start with Twig right away. Because this is a
 
 Remember how you created a `MustacheRenderer` in [chapter 9](09-templating.md)? This time, we create a `TwigRenderer` that implements the same interface.
 
-But before we start, install the latest version of Twig with composer.
+But before we start, install the latest version of Twig with composer (`composer require "twig/twig:~1.0"`).
 
 Then create the a `TwigRenderer.php` in your `src/Template` folder that looks like this:
 
