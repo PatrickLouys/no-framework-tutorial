@@ -48,7 +48,7 @@ As you can see, on the render function call a `.html` is added. This is because 
 Add the following code to your `Dependencies.php` file: 
 
 ```php
-$injector->delegate('Twig_Environment', function() use ($injector) {
+$injector->delegate('Twig_Environment', function () use ($injector) {
     $loader = new Twig_Loader_Filesystem(dirname(__DIR__) . '/templates');
     $twig = new Twig_Environment($loader);
     return $twig;
