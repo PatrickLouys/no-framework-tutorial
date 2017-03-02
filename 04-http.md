@@ -59,7 +59,7 @@ $response->setContent('404 - Page not found');
 $response->setStatusCode(404);
 ```
 
-Remember that the object is only storing data, so you if you set multiple status codes before you send the response, only the last one will be applied.
+Remember that the object is only storing data, so if you set multiple status codes before you send the response, only the last one will be applied.
 
 I will show you in later parts how to use the different features of the components. In the meantime, feel free to read the [documentation](https://github.com/PatrickLouys/http) or the source code if you want to find out how something works.
 
