@@ -1,3 +1,11 @@
+Because this tutorial was so well-received, it inspired me to write a book. The book is a much more up to date version of this tutorial and covers a lot more. Click the link below to check it out (there is also a sample chapter available).
+
+### [Professional PHP: Building maintainable and secure applications](http://patricklouys.com/professional-php/)
+
+![](http://patricklouys.com/img/professional-php-thumb.png)
+
+The tutorial is still available in it's original form below.
+
 ## Create a PHP application without a framework
 
 ### Introduction
