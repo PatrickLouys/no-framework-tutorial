@@ -8,7 +8,7 @@ If you got something out of the tutorial I would appreciate a star. It's the onl
 
 Because this tutorial was so well-received, it inspired me to write a book. The book is a much more up to date version of this tutorial and covers a lot more. Click the link below to check it out (there is also a sample chapter available).
 
-## [Professional PHP: Building maintainable and secure applications](http://patricklouys.com/professional-php/)
+### [Professional PHP: Building maintainable and secure applications](http://patricklouys.com/professional-php/)
 
 Thanks for your time,
 
