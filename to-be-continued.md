@@ -4,13 +4,11 @@ Congratulations. You made it this far.
 
 I hope you were following the tutorial step by step and not just skipping over the chapters :)
 
-I have received good feedback so far so I decided to start writing a book. [Click here](http://artofphp.com/) to learn more about that.
-
-But don't worry, I will also keep working on this tutorial. I was a bit lazy over the summer but now that it getting colder again I will have much more time to spend on the tutorial.
-
 If you got something out of the tutorial I would appreciate a star. It's the only way for me to see if people are actually reading this :)
 
+Because this tutorial was so well-received, it inspired me to write a book. The book is a much more up to date version of this tutorial and covers a lot more. Click the link below to check it out (there is also a sample chapter available).
 
+## [Professional PHP: Building maintainable and secure applications](http://patricklouys.com/professional-php/)
 
 Thanks for your time,
 
