@@ -10,6 +10,8 @@ Because this tutorial was so well-received, it inspired me to write a book. The 
 
 ### [Professional PHP: Building maintainable and secure applications](http://patricklouys.com/professional-php/)
 
+![](http://patricklouys.com/img/professional-php-thumb.png)
+
 Thanks for your time,
 
 Patrick
