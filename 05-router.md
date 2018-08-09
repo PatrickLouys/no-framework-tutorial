@@ -42,7 +42,7 @@ switch ($routeInfo[0]) {
 }
 ```
 
-In the first part of the code, you are registering the available routes for you application. In the second part, the dispatcher gets called and the appropriate part of the switch statement will be executed. If a route was found, the handler callable will be executed.
+In the first part of the code, you are registering the available routes for your application. In the second part, the dispatcher gets called and the appropriate part of the switch statement will be executed. If a route was found, the handler callable will be executed.
 
 This setup might work for really small applications, but once you start adding a few routes your bootstrap file will quickly get cluttered. So let's move them out into a separate file.
 
