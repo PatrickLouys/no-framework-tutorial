@@ -16,7 +16,7 @@ Now you might wonder why we didn't start with Twig right away. Because this is a
 
 Remember how you created a `MustacheRenderer` in [chapter 9](09-templating.md)? This time, we create a `TwigRenderer` that implements the same interface.
 
-But before we start, install the latest version of Twig with composer (`composer require "twig/twig:~1.0"`).
+But before we start, install the latest version of Twig with composer (`composer require "twig/twig:~1.38"`).
 
 Then create the a `TwigRenderer.php` in your `src/Template` folder that looks like this:
 
@@ -25,13 +25,13 @@ Then create the a `TwigRenderer.php` in your `src/Template` folder that looks li
 
 namespace Example\Template;
 
-use Twig_Environment;
+use Twig\Environment;
 
 class TwigRenderer implements Renderer
 {
     private $renderer;
 
-    public function __construct(Twig_Environment $renderer)
+    public function __construct(Environment $renderer)
     {
         $this->renderer = $renderer;
     }
@@ -48,9 +48,9 @@ As you can see, on the render function call a `.html` is added. This is because 
 Add the following code to your `Dependencies.php` file: 
 
 ```php
-$injector->delegate('Twig_Environment', function () use ($injector) {
-    $loader = new Twig_Loader_Filesystem(dirname(__DIR__) . '/templates');
-    $twig = new Twig_Environment($loader);
+$injector->delegate('\Twig\Environment', function () use ($injector) {
+    $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/templates');
+    $twig = new \Twig\Environment($loader);
     return $twig;
 });
 ```
