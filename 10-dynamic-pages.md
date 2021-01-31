@@ -164,13 +164,14 @@ class InvalidPageException extends Exception
 Then in the `FilePageReader` file add this code at the end of your `readBySlug` method:
 
 ```php
-$path = "$this->pageFolder/$slug.md";
-
-if (!file_exists($path)) {
-    throw new InvalidPageException($slug);
+foreach (new FilesystemIterator($this->pageFolder) as $page) {
+    if ($page === "$slug.md") {
+      $page = $page->openFile();
+      return $page->fread($page->getSize());
+    }
 }
 
-return file_get_contents($path);
+throw new InvalidPageException($slug);
 ```
 
 Now if you navigate to a page that does not exist, you should see an `InvalidPageException`. If a file exists, you should see the content.
